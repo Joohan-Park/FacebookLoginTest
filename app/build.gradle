@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    repositories {     // 메이븐 중앙저장소로 부터 라이브러리 다운로드
+        mavenCentral()
+    }
+
+    defaultConfig {
+        applicationId "com.example.bit_user.fbloginsample"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.facebook.android:facebook-android-sdk:4.18.0'  // 페이스북 SDK사용을 위해 --> 이걸하면 import 가능
+                                                                        //버전 저장은 4.+ 로 하면 4.0~4.최신버전까지 사용가능
+    testCompile 'junit:junit:4.12'
+}

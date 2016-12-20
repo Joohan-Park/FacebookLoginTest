@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FacebookLoginTest</string>
+    <string name="app_id">1835735250041194</string>  <!--facebook developer에서 앱 id 받아오기-->
+</resources>
